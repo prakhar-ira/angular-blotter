@@ -1,0 +1,46 @@
+.container {
+  padding: 1.5rem;
+}
+
+.table-color {
+  background-color: #01325B;
+}
+
+.header-text-color {
+  background-color: #01325B;
+  color: #FFF
+}
+.row-color {
+  color: #FFC200;
+}
+
+.side-row-buy {
+color: #00A95D
+}
+
+.side-row-sell {
+  color: #E7152D
+}
+
+.status-row-filled {
+  color: #A9A9A9
+}
+
+.status-row-cancelled {
+  color: #E7152D
+}
+
+.status-row-working {
+  color: #FFF
+}
+
+input.input-align {
+  display: block;
+  margin: auto;
+}
+
+button.button-align {
+  display: block;
+  margin: auto;
+  background-color: aliceblue;
+}

@@ -1,0 +1,36 @@
+<div class="container">
+  <table class="table table-color">
+    <thead>
+        <tr>
+            <th class="header-text-color">{{ columns[0]?.column_name }}
+              <button type="button" class="btn btn-sm button-align" (click)="sortTable()">{{ type ? 'Ascending' : 'Descending' }}</button>
+            </th>
+            <th class="header-text-color">{{ columns[1]?.column_name }}</th>
+            <th class="header-text-color">{{ columns[2]?.column_name }}</th>
+            <th class="header-text-color">{{ columns[3]?.column_name }}
+              <input type="text" placeholder="Search CcyPair" name="ccyInput" class="input-align" #searchCcy>
+            </th>
+            <th class="header-text-color">{{ columns[4]?.column_name }}</th>
+            <th class="header-text-color">{{ columns[5]?.column_name }}</th>
+            <th class="header-text-color" id="header-text-input">{{ columns[6]?.column_name }}
+              <input type="text" placeholder="Search Status" name="statusInput" class="input-align" #searchStatus>
+              {{ columns[7]?.column_name }}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of dummyRows; let i = index">
+            <td class="row-color">{{ row?.Time }}</td>
+            <td [ngClass]="{'side-row-buy' : row?.Side === 'Buy',
+                            'side-row-sell' : row?.Side === 'Sell'}">{{ row?.Side }}</td>
+            <td class="row-color">{{ row?.OrderType }}</td>
+            <td class="row-color">{{ row?.CcyPair }}</td>
+            <td class="row-color">{{ row?.Price }}</td>
+            <td class="row-color">{{ row?.Amount }}</td>
+            <td [ngClass]="{'status-row-filled' : row?.Status === 'Filled',
+            'status-row-cancelled' : row?.Status === 'Cancelled',
+            'status-row-working' : row?.Status === 'Working'}">{{ row?.Status }}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
